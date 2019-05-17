@@ -46,15 +46,15 @@ class Cipher:
 
     #Check if we have an empty string or for non-alphabet characters
     def __isValid(self, inpStr):
+        #if the string is empty, also invalid
+        if inpStr == "":
+            raise Exception("Input string is empty.")
+            return False
+
         #regex match any non-letter character
         res = re.search("[^a-zA-Z]",inpStr)
         if res != None:
             raise Exception("Input string contains invalid characters.")
-            return False
-        
-        #if the string is empty, also invalid
-        if res == "":
-            raise Exception("Input string is empty.")
             return False
     
         return True
